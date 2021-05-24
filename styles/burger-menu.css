@@ -1,0 +1,43 @@
+.burgerMenu__container {
+  display: flex;
+  align-items: center;
+}
+
+.burger__menu {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+
+  cursor: pointer;
+}
+
+.line {
+  width: 70px;
+  height: 10px;
+  border-radius: 10px;
+  margin: 5px;
+
+  background: white;
+
+  transition: 0.2s;
+}
+
+.line__1.activeMenu {
+  transform: rotate(45deg) translate(14.142135px, 14.142135px);
+}
+
+.line__2.activeMenu {
+  opacity: 0;
+}
+
+.line__3.activeMenu {
+  transform: rotate(-45deg) translate(14.142135px, -14.142135px);
+}

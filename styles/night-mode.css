@@ -1,0 +1,71 @@
+.nightMode__container {
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.nightMode__container.dark {
+  background: rgb(102, 102, 102);
+}
+
+.outside__button {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+
+  position: relative;
+  background: black;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  z-index: 1;
+}
+
+.outside__button::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: black;
+
+  position: absolute;
+  left: 0px;
+  transform: translate(-50%, 0);
+}
+
+.outside__button::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: black;
+
+  position: absolute;
+  right: 0;
+  transform: translate(50%, 0);
+}
+
+.inside__button {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background: white;
+
+  position: absolute;
+  left: 0;
+  transform: translate(-50%, 0);
+
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.inside__button.darkActive {
+  left: 100%;
+  background: rgb(177, 177, 177);
+}
