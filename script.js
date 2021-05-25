@@ -30,3 +30,29 @@ function activeBurgerMenu() {
 }
 
 activeBurgerMenu();
+
+//TAB NAVIGATION
+
+function activeTabMenu() {
+  const tabItems = document.querySelectorAll(".js-tab__items li");
+  const tabContents = document.querySelectorAll(".js-tab__contents li");
+
+  if (tabItems.length && tabContents.length) {
+    tabContents[0].classList.add("activeContent");
+
+    function showTabContent(index) {
+      tabContents.forEach((item) => {
+        item.classList.remove("activeContent");
+      });
+      tabContents[index].classList.add("activeContent");
+    }
+
+    tabItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        showTabContent(index);
+      });
+    });
+  }
+}
+
+activeTabMenu();
