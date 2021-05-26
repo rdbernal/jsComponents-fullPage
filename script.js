@@ -56,3 +56,16 @@ function activeTabMenu() {
 }
 
 activeTabMenu();
+
+//ACCORDION LIST
+
+const accordionItems = document.querySelectorAll(".js-accordion__list dt");
+
+function callback(event) {
+  this.classList.toggle("active");
+  this.nextElementSibling.classList.toggle("active");
+}
+
+accordionItems.forEach((item) => {
+  item.addEventListener("click", callback);
+});

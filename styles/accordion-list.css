@@ -1,0 +1,48 @@
+.accordion__container {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.accordion__list dt {
+  width: 100%;
+
+  position: relative;
+  padding: 5px 10px;
+  /* background: #bebebe; */
+  border-bottom: solid 1px black;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: 0.5s;
+}
+
+.accordion__list dt::after {
+  content: "+";
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.js-accordion__list dt.active {
+  background: #909090;
+  border: none;
+}
+
+.js-accordion__list dt.active::after {
+  transform: rotate(45deg);
+}
+
+.js-accordion__list dd {
+  padding: 5px 10px;
+  display: none;
+  overflow: hidden;
+}
+
+.js-accordion__list dd.active {
+  display: block;
+}
