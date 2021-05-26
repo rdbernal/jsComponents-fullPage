@@ -78,4 +78,29 @@ function activeAccordion() {
 
 activeAccordion();
 
-//SCROLL SUAVE
+//ANIMAÇÃO AO SCROLL
+
+function activeScrollAnimation() {
+  const scrollItems = document.querySelectorAll(".js-general__section");
+  const halfWindow = window.innerHeight * 0.6;
+
+  if (scrollItems.length) {
+    function callback() {
+      scrollItems.forEach((item) => {
+        const counter = item.getBoundingClientRect().top;
+        const condition = counter - halfWindow < 0;
+        if (condition) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    }
+
+    callback();
+
+    window.addEventListener("scroll", callback);
+  }
+}
+
+activeScrollAnimation();
