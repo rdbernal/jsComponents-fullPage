@@ -59,13 +59,23 @@ activeTabMenu();
 
 //ACCORDION LIST
 
-const accordionItems = document.querySelectorAll(".js-accordion__list dt");
+function activeAccordion() {
+  const accordionItems = document.querySelectorAll(".js-accordion__list dt");
 
-function callback(event) {
-  this.classList.toggle("active");
-  this.nextElementSibling.classList.toggle("active");
+  if (accordionItems.length) {
+    accordionItems[0].classList.add("active");
+    accordionItems[0].nextElementSibling.classList.add("active");
+  }
+  function callback(event) {
+    this.classList.toggle("active");
+    this.nextElementSibling.classList.toggle("active");
+  }
+
+  accordionItems.forEach((item) => {
+    item.addEventListener("click", callback);
+  });
 }
 
-accordionItems.forEach((item) => {
-  item.addEventListener("click", callback);
-});
+activeAccordion();
+
+//SCROLL SUAVE
